@@ -131,6 +131,17 @@ void from_json(const nlohmann::json& j, {{classname}}& o)
 {{/enumVars}}{{/allowableValues}}{{/isEnum}}{{#vendorExtensions.x-is-string-enum-container}}{{#anyOf}}{{#-first}}from_json(j, o.m_value);{{/-first}}{{/anyOf}}{{/vendorExtensions.x-is-string-enum-container}}
 }
 
+bool fromStringValue(const std::string &s, {{classname}}& o){
+    try {
+        nlohmann::json j_str = s;
+        from_json(j_str, o);
+    }
+    catch (const std::invalid_argument&) {
+        return false;
+    }
+    return true;
+}
+
 {{#vars}}{{{dataType}}} {{classname}}::{{getter}}() const
 {
     return m_{{name}};

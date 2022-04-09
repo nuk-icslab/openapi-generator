@@ -79,6 +79,7 @@ public:
     friend void from_json(const nlohmann::json& j, {{classname}}& o);{{#vendorExtensions.x-is-string-enum-container}}{{#anyOf}}{{#-first}}
     friend void to_json(nlohmann::json& j, const {{{this}}}& o);
     friend void from_json(const nlohmann::json& j, {{{this}}}& o);{{/-first}}{{/anyOf}}{{/vendorExtensions.x-is-string-enum-container}}
+    friend bool fromStringValue(const std::string &s, {{classname}}& o);
 protected:
     {{#vars}}
     {{{dataType}}} m_{{name}};
