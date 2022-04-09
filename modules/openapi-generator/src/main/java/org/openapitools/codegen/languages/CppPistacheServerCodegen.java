@@ -139,6 +139,9 @@ public class CppPistacheServerCodegen extends AbstractCppCodegen {
         typeMapping.put("UUID", "std::string");
         typeMapping.put("URI", "std::string");
         typeMapping.put("ByteArray", "std::string");
+        // [TODO] This is the temporary fix for missing AnyType.
+        // Maybe create a custom Object class or use boost::any is a better solution
+        typeMapping.put("AnyType", "std::string");
 
         super.importMapping = new HashMap<>();
         importMapping.put("std::vector", "#include <vector>");
