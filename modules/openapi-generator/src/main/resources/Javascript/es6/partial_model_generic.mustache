@@ -25,7 +25,7 @@ class {{classname}} {{#parent}}{{^parentModel}}{{#vendorExtensions.x-is-array}}e
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */{{/emitJSDoc}}
-    static initialize(obj{{#vendorExtensions.x-all-required}}, {{name}}{{/vendorExtensions.x-all-required}}) { {{#vars}}{{#required}}
+    static initialize(obj{{#vars}}{{#required}}, {{name}}{{/required}}{{/vars}}) { {{#vars}}{{#required}}
         {{#defaultValue}}obj['{{baseName}}'] = {{name}} || {{{defaultValue}}};{{/defaultValue}}{{^defaultValue}}obj['{{baseName}}'] = {{name}};{{/defaultValue}}{{/required}}{{/vars}}
     }
 
