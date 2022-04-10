@@ -13,6 +13,14 @@ export default class {{classname}} {
 
     {{/enumVars}}{{/allowableValues}}
 
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
     {{#emitJSDoc}}/**
     * Returns a <code>{{classname}}</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
