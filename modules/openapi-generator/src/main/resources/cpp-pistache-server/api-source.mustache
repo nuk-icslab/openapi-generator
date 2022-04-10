@@ -132,7 +132,7 @@ void {{classname}}::{{operationIdSnakeCase}}_handler(const Pistache::Rest::Reque
 
 void {{classname}}::{{classnameSnakeLowerCase}}_default_handler(const Pistache::Rest::Request &request, Pistache::Http::ResponseWriter response) {
     // Allow CORS preflight request
-    if (request.method() == Pistache::Http::Method::Optiosns)
+    if (request.method() == Pistache::Http::Method::Options)
     {
         response.headers().add<Pistache::Http::Header::AccessControlAllowOrigin>("*");
         response.headers().add<Pistache::Http::Header::AccessControlAllowHeaders>("X-Custom-Header, user-agent, content-type, Authorization");
